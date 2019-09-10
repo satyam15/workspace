@@ -29,7 +29,7 @@ var userschema= new Schema({
         type:String,
         trim:true,
         require:true,
-        trim:true
+        
     },
     torg:
     {
@@ -38,15 +38,15 @@ var userschema= new Schema({
          require:true
         // trim:true
     },
-    tsize:
-    {
-        type:Number
+    // tsize:
+    // {
+    //     type:Number
         
-    },
+    // },
     teamember:
     {
         type:Array,
-        require:true,
+         require:true,
         
     },
     tleader:
@@ -61,14 +61,14 @@ var userschema= new Schema({
     {
         type:Number,
         require:true
-    },
-    tstatus:
-    {
-        type:NUmber
     }
+    // tstatus:
+    // {
+    //     type:NUmber
+    // }
    
 
 })
 userschema.plugin(autoIncrement.plugin, { model: 'team', field: 'teamId',startAt:500 })
-var team= connection.model('team', userschema)
-module.export=team;
+const team= connection.model('team', userschema)
+module.exports=team;
