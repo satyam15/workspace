@@ -85,10 +85,22 @@ var userschema= new Schema({
     {
         type:String,
         trim:true
+    },
+    ureq:
+    {
+        type:Array,
+        trim:true
     }
 
 
 })
+
 userschema.plugin(autoIncrement.plugin, { model: 'user', field: 'userId' })
 var user = connection.model('user', userschema)
+//userschema.statics.findByCredentials=async(uemail,upasswd)=>{
+   // const user=await user.findOne({uemail,upaswd})
+    //if(!user)
+    //throw new Error('unable to login')
+    //return user
+//}
 module.exports=user
