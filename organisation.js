@@ -2,7 +2,7 @@ const express=require('express')
 const req=require('request')
 const path=require('path')
 const fs=require('fs')
-const validator=require('validator')
+//const validator=require('validator')
 //const mongoose=require('mongoose')
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
@@ -16,40 +16,40 @@ autoIncrement.initialize(connection);
  
 
 const app=express()
-//const validator=require('validator')
+const validator=require('validator')
 
 var userschema= new Schema({
-    userId:
+    orgId:
     {
         type:Number
-       
+        //require:true
+        
     },
-    uname:
+    orgname:
     {
         type:String,
         trim:true,
         require:true,
         trim:true
     },
-    uteam:
+    orgteam:
     {
-         type:Number
+         type:Array
         // trim:true
     },
-    uemail:
+    orgemail:
     {
         type:String,
         require:true,
         lowercase:true,
         trim:true,
-        unique:true,
         validate(value)
         {
             if(!validator.isEmail(value))
             throw new Error('Email is invalid')
         }
     },
-    umob:
+    orgmob:
     {
         type:String,
         require:true,
@@ -59,7 +59,7 @@ var userschema= new Schema({
             throw new Error('mobile is invalid')
         }
     },
-    upasswd:
+    orgpasswd:
     {
         type:String,
         require:true,
@@ -67,41 +67,10 @@ var userschema= new Schema({
         trim:true
         
 
-    },
-    uorg:
-    {
-        type:String,
-        trim:true
-    },
-    taskcom:
-    {
-        type:Number
-    },
-    tasktodo:
-    {
-        type:String,
-        trim: true
-    },
-    utype:
-    {
-        type:String,
-        trim:true
-    },
-    ureq:
-    {
-        type:Array,
-        trim:true
     }
-
+   
 
 })
-
-userschema.plugin(autoIncrement.plugin, { model: 'user', field: 'userId' })
-var user = connection.model('user', userschema)
-//userschema.statics.findByCredentials=async(uemail,upasswd)=>{
-   // const user=await user.findOne({uemail,upaswd})
-    //if(!user)
-    //throw new Error('unable to login')
-    //return user
-//}
-module.exports=user
+userschema.plugin(autoIncrement.plugin, { model: 'organisation', field: 'orgId',startAt:1000 })
+var org = connection.model('organisation', userschema)
+module.export=org;
