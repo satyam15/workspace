@@ -1,0 +1,88 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <link rel="stylesheet" type="text/css" href="./css/homestyle.css">
+            <style>
+              body{
+                background-image: url("./Images/home.jpg");
+              }
+              </style>
+    </head>
+    <body >
+           
+           
+      <nav class="navbar navbar-inverse ">
+
+          <div class="container" >
+           
+               
+              
+                <div class="navbar-header">
+                <a href="/homepage" class="navbar-brand"> WORKSPACE</a>
+               
+                <!-- <img src="Images/workspace_logo.png" alt="logo" class="logo"> --> -->
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ">
+          <li ><a href="/CreateTeamPage">Create Team</a></li>
+          <li ><a href="/requestpage">Send Requests</a></li>
+          <li ><a href="#">Team Info</a></li>
+          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+           <li ><a href="notifications">Notifications</a></li> -->
+            <li ><a href="#">Logout</a></li>
+      
+          </ul>
+                </div>
+      </div>
+      </nav>
+      
+        <h1>This is create team page</h1>  
+      
+      
+<!-- Form Section       -->
+      
+ <div class="container" > 
+                <div class="row"> 
+                <div class="col-md-3"> 
+                            
+                </div> 
+                        
+                <div class="col-md-6 main"> 
+                            
+                    <form action="/create_team"   method="post"> 
+                            
+                    <!-- <h1> Create Team </h1>  -->
+                      <h3>Enter Team Details</h3>              
+                    <input class="box" type="text" name="teamname" id="teamname"
+                    placeholder="Team Name" required /><br> 
+                                    
+                    <input class="box" type=" number" name="organisationid" id="organisationid"
+                    placeholder="Organisation ID " required /><br> 
+                                    
+                    <input class="box" type=" text" name="organisationname" id="organisationname"
+                    placeholder="Organisation Name " required /><br> 
+                    
+                    <!-- temp user id is mentioned -->
+                    <!-- <input class="box" type=" text" name="leaderid" id="leaderid"
+                    placeholder="Leadererid" required /><br> 
+                     -->
+                    <input type="submit" id="submitDetails"
+                    name="submitDetails" value="Create Team" required /><br> 
+                    <p></p>
+                            
+                    </form> 
+                            
+                </div> 
+                        
+                        
+                <div class="col-md-3"> 
+                </div> 
+                        
+            </div> 
+            </div>       
+    </body>
+</html>

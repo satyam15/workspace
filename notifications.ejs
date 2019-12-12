@@ -1,0 +1,67 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <link rel="stylesheet" type="text/css" href="./css/homestyle.css">
+            <style>
+              body{
+                background-image: url("./Images/home.jpg");
+              }
+              </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse ">
+
+            <div class="container" >
+             
+                 
+                
+                  <div class="navbar-header">
+                  <a href="/homepage" class="navbar-brand"> WORKSPACE</a>
+                 
+                  <!-- <img src="Images/workspace_logo.png" alt="logo" class="logo"> --> -->
+                  </div>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ">
+            <li ><a href="/CreateTeamPage">Create Team</a></li>
+            <li ><a href="/requestpage">Send Requests</a></li>
+            <li ><a href="#">Team Info</a></li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          
+            <li ><a href="/notifications">Notifications</a></li>
+              <li ><a href="/logout">Logout</a></li>
+        
+            </ul>
+                  </div>
+        </div>
+        </nav>
+        
+        <h1>This is create request page</h1>  
+      
+      
+<!-- Form Section       -->
+<form action="handle_request" method="POST">
+    <label><%= req  %></label>
+    <button type="submit" name="accept" onclick="form.action='/accept'">Accept</button>
+    <button type="submit" name="decliine" onclick="form.action='/decline'" >Decline</button>
+    
+    </form>
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
